@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Stanza 1 – Il laboratorio delle onde</title>
+
+  <link rel="stylesheet" href="../../shared/base.css">
+  <link rel="stylesheet" href="style.css">
+
+  <script src="../../shared/doodles.js" defer></script>
+  <script src="audio.js" defer></script>
+  <script src="main.js" defer></script>
+</head>
+<body>
+
+  <svg id="doodles" aria-hidden="true"></svg>
+
+  <main>
+    <header class="banner">
+      <h1>Stanza 1: il laboratorio delle onde</h1>
+      <p>♪ Ascolta, riconosci, esci ♪</p>
+    </header>
+
+    <section class="card intro">
+      <h2>Di cosa si tratta</h2>
+      <p>Ogni suono è un'onda: una vibrazione che si ripete nel tempo. La sua <i>forma</i> ne cambia il <i>timbro</i>, cioè il carattere del suono. Questa porta si apre solo a chi sa riconoscere quattro forme d'onda diverse.</p>
+
+      <h2 class="how">Come uscire</h2>
+      <ol>
+        <li>Ascolta le tre tracce con i pulsanti play.</li>
+        <li>Cerca nel libro dei timbri il codice del suono che hai sentito.</li>
+        <li>Inserisci i tre codici, in ordine, nella serratura e premi Invia.</li>
+      </ol>
+    </section>
+
+    <section class="card">
+      <h2>Il libro dei timbri</h2>
+      <table>
+        <thead>
+          <tr><th>Codice</th><th>Forma d'onda</th><th>Carattere del suono</th></tr>
+        </thead>
+        <tbody id="legend"></tbody>
+      </table>
+    </section>
+
+    <div class="cols">
+      <section class="card">
+        <h2>Il decifratore di segnali</h2>
+        <div id="tracks"></div>
+      </section>
+
+      <section class="card" id="lock">
+        <h2>La serratura</h2>
+        <div class="display" id="display"></div>
+        <div class="pad" id="pad"></div>
+        <div class="status" id="status" role="status" aria-live="polite"></div>
+        <div class="tools">
+          <span id="tries">Tentativi: 0</span>
+          <button class="ghost" id="regen" type="button">Nuove tracce</button>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <div id="win">
+    <div>
+      <h2>Porta aperta!</h2>
+      <p>Hai riconosciuto le tre onde. La sala successiva ti aspetta.</p>
+      <button class="key go" id="next" type="button">Alla stanza 2</button>
+    </div>
+  </div>
+
+</body>
+</html>

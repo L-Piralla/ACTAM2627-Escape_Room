@@ -1,0 +1,155 @@
+/* =========================================================
+   Shared styles for every room
+   ========================================================= */
+
+/* ---------- Palette ---------- */
+:root {
+  --paper: #f4ecd8;
+  --card:  #fffaf0;
+  --ink:   #1b1612;
+  --soft:  #5d5246;
+  --wine:  #7a1f2b;
+  --gold:  #b8892f;
+  --ok:    #2f6b3f;
+  --bad:   #b3261e;
+}
+
+/* ---------- Base ---------- */
+* { box-sizing: border-box; margin: 0; }
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: Georgia, "Palatino Linotype", Palatino, serif;
+  min-height: 100vh;
+}
+
+main {
+  position: relative;
+  z-index: 1;
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 22px 16px 44px;
+}
+
+:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
+
+/* ---------- Doodle background ---------- */
+#doodles {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+  opacity: .55;
+}
+
+/* ---------- Header ---------- */
+.banner {
+  background: var(--ink);
+  color: var(--paper);
+  text-align: center;
+  padding: 18px 16px 14px;
+  margin-bottom: 24px;
+  border: 3px solid var(--ink);
+  outline: 2px solid var(--gold);
+  outline-offset: -9px;
+  box-shadow: 6px 6px 0 var(--wine);
+}
+.banner h1 {
+  font-size: clamp(26px, 5vw, 44px);
+  font-weight: normal;
+  letter-spacing: 1px;
+  line-height: 1.15;
+}
+.banner p {
+  color: var(--gold);
+  font-style: italic;
+  margin-top: 6px;
+  letter-spacing: 2px;
+}
+
+/* ---------- Card ---------- */
+.card {
+  background: var(--card);
+  border: 2px solid var(--ink);
+  border-radius: 6px;
+  padding: 16px;
+  box-shadow: 5px 5px 0 var(--ink);
+  margin-bottom: 22px;
+}
+.card h2 {
+  font-size: 19px;
+  font-style: italic;
+  font-weight: normal;
+  margin-bottom: 12px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--ink);
+}
+
+/* ---------- Intro ---------- */
+.intro p,
+.intro li   { line-height: 1.6; }
+.intro ol   { margin: 0 0 0 22px; }
+.intro .how { margin-top: 14px; }
+
+/* ---------- Status message ---------- */
+.status { text-align: center; min-height: 22px; margin-top: 12px; font-style: italic; color: var(--soft); }
+.status.bad { color: var(--bad); }
+
+/* ---------- Buttons ---------- */
+.key {
+  padding: 12px 0;
+  border: 2px solid var(--ink);
+  border-radius: 4px;
+  background: var(--paper);
+  font: 700 20px Georgia, serif;
+  cursor: pointer;
+  box-shadow: 0 3px 0 var(--ink);
+  color: var(--ink);
+}
+.key:hover  { filter: brightness(1.07); }
+.key:active { transform: translateY(3px); box-shadow: none; }
+.key.go     { background: var(--wine); color: var(--paper); }
+
+.ghost {
+  background: none;
+  border: 1px solid var(--soft);
+  border-radius: 4px;
+  padding: 5px 10px;
+  font: italic 13px Georgia, serif;
+  color: var(--soft);
+  cursor: pointer;
+}
+
+/* ---------- Win screen ---------- */
+#win {
+  position: fixed;
+  inset: 0;
+  z-index: 5;
+  background: rgba(244, 236, 216, .93);
+  display: none;
+  place-items: center;
+  text-align: center;
+  padding: 20px;
+}
+#win.show { display: grid; }
+#win h2 {
+  font-size: 40px;
+  font-style: italic;
+  font-weight: normal;
+  color: var(--ok);
+  margin-bottom: 10px;
+}
+#win p { margin-bottom: 20px; line-height: 1.5; font-style: italic; }
+#win .key { padding: 12px 28px; }
+
+/* ---------- Shared animations ---------- */
+.shake { animation: shake .4s; }
+@keyframes shake {
+  20% { transform: translateX(-8px); }
+  40% { transform: translateX(8px); }
+  60% { transform: translateX(-5px); }
+  80% { transform: translateX(5px); }
+}
