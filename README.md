@@ -1,7 +1,5 @@
 # Escape room ACTAM - 2025/2026
 
-test
-
 Escape room musicale nel browser: ogni stanza è un enigma sul suono.
 
 ## Structure
