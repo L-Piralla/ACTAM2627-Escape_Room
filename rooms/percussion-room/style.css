@@ -1,0 +1,12 @@
+/* =========================================================
+   Template room – room-specific styles
+   Shared styles (palette, .card, .banner, .intro, .status, .key, #win, .shake)
+   live in shared/base.css: only add what this room needs.
+   ========================================================= */
+
+/* ---------- Puzzle ---------- */
+#puzzle-area { min-height: 120px; }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 760px) {
+}

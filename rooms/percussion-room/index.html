@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- TODO: room title -->
+  <title>Room # – Drums and percussions</title>
+
+  <link rel="stylesheet" href="../../shared/base.css">
+  <link rel="stylesheet" href="style.css">
+
+  <script src="../../shared/doodles.js" defer></script>
+  <script src="main.js" defer></script>
+</head>
+<body>
+
+  <!-- Doodle background (filled by shared/doodles.js) -->
+  <svg id="doodles" aria-hidden="true"></svg>
+
+  <main>
+    <!-- Header -->
+    <header class="banner">
+      <h1>Stanza N 2: Percussion timbres</h1>
+      <p>♪ Learn about percussion timbres, tuning and features. ♪</p>
+    </header>
+
+    <!-- Intro: story + rules -->
+    <section class="card intro">
+      <h2>Di cosa si tratta</h2>
+      <p>Can you listen to this drumkit and tune yours to sound like the target one? Pitches, timbres, dynamics, everyting interacts to form a drumkit sound.</p>
+
+      <h2 class="how">Come uscire</h2>
+      <ol>
+        <li>Find how many and which pieces the drum has.</li>
+        <li>Tune each individual piece to sound like the target.</li>
+        <li>Reproduce the groove.</li>
+      </ol>
+    </section>
+
+    <!-- Puzzle: put the room's interactive content here -->
+    <section class="card" id="drum-comp">
+      <h2>Drumkit composition</h2>
+      <div id="puzzle-area"></div>
+      <div class="status" id="status" role="status" aria-live="polite"></div>
+    </section>
+
+    <section class="card" id="tune-drum">
+      <h2>Tune the components</h2>
+      <div id="puzzle-area"></div>
+      <div class="status" id="status" role="status" aria-live="polite"></div>
+    </section>
+
+    <section class="card" id="groove-finder">
+      <h2>Find the groove</h2>
+      <div id="puzzle-area"></div>
+      <div class="status" id="status" role="status" aria-live="polite"></div>
+    </section>
+  </main>
+
+  <!-- Win screen: shown by winRoom() in main.js -->
+  <div id="win">
+    <div>
+      <h2>Porta aperta!</h2>
+      <p>Messaggio di vittoria.</p>
+      <button class="key go" id="next" type="button">Alla stanza successiva</button>
+    </div>
+  </div>
+
+</body>
+</html>
