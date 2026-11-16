@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Il pianista e l'armonia</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="audio.js" defer></script>
+  <script src="main.js" defer></script>
+</head>
+<body>
+
+<!-- Libreria di disegni a mano (stile doodle, tema classico) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <g id="d-note"><ellipse cx="30" cy="76" rx="11" ry="8" transform="rotate(-20 30 76)"/><ellipse cx="72" cy="68" rx="11" ry="8" transform="rotate(-20 72 68)"/><path d="M40 72V22L82 14V64M40 36L82 28"/></g>
+    <g id="d-vinyl"><circle cx="50" cy="50" r="44"/><circle cx="50" cy="50" r="31"/><circle cx="50" cy="50" r="14"/><circle cx="50" cy="50" r="2"/><path d="M22 28A34 34 0 0 1 40 17"/></g>
+    <g id="d-metro"><path d="M30 92L42 12H58L70 92Z"/><path d="M24 92H76M50 80L63 28M57 40H69"/><circle cx="50" cy="60" r="3"/></g>
+    <g id="d-violin"><path d="M50 4V34M44 4H56"/><path d="M50 34C30 34 28 50 38 56C26 62 24 90 50 94C76 90 74 62 62 56C72 50 70 34 50 34Z"/><path d="M42 62Q44 72 42 80M58 62Q56 72 58 80M40 84H60"/><path d="M82 14L66 92"/></g>
+    <g id="d-piano"><rect x="8" y="28" width="84" height="48" rx="2"/><path d="M22 28V76M36 28V76M50 28V76M64 28V76M78 28V76"/><path d="M18 28V56H26V28M32 28V56H40V28M60 28V56H68V28M74 28V56H82V28" /></g>
+    <g id="d-phones"><path d="M18 62V50A32 32 0 0 1 82 50V62"/><rect x="10" y="58" width="16" height="26" rx="6"/><rect x="74" y="58" width="16" height="26" rx="6"/></g>
+    <g id="d-clef"><path d="M54 6V88"/><path d="M54 14C40 28 40 50 52 62C64 74 60 92 46 90C34 88 34 76 46 76C58 76 62 62 50 52C36 42 36 28 50 22"/></g>
+    <g id="d-fork"><path d="M38 8V48C38 66 62 66 62 48V8M50 62V92"/><path d="M26 30Q20 38 26 46M74 30Q80 38 74 46"/></g>
+    <g id="d-staff"><path d="M4 30H96M4 42H96M4 54H96M4 66H96M4 78H96"/><ellipse cx="36" cy="60" rx="8" ry="6" transform="rotate(-20 36 60)"/><path d="M43 58V22"/></g>
+    <g id="d-star"><path d="M50 14L55 44L86 50L55 56L50 86L45 56L14 50L45 44Z"/></g>
+    <g id="d-adagio"><text x="4" y="58" font-family="Georgia,serif" font-style="italic" font-size="30" stroke="none" fill="#1b1612">Adagio</text></g>
+    <g id="d-forte"><text x="14" y="62" font-family="Georgia,serif" font-style="italic" font-weight="bold" font-size="46" stroke="none" fill="#1b1612">ff</text></g>
+  </defs>
+</svg>
+<svg id="doodles" aria-hidden="true"></svg>
+
+<main>
+  <h1>Il pianista e l'armonia</h1>
+  <div class="rule">♪ ♫ ♪</div>
+
+  <section class="card maestro">
+    <div class="avatar"><img id="face" alt="Il pianista" src="img/pianista_normale.jpg"></div>
+    <div>
+      <b>Il Pianista</b>
+      <p id="say" role="status" aria-live="polite"></p>
+      <div class="act" id="act"></div>
+    </div>
+  </section>
+
+  <section class="card" id="game" style="display:none"></section>
+</main>
+
+<button class="key back" id="back" type="button">Indietro</button>
+
+<div id="ask"><div class="card">
+  <p>Sei sicuro di tornare indietro? Tutti i progressi andranno persi</p>
+  <div class="act"><button class="key go" id="yes" type="button">Sì</button><button class="key" id="no" type="button">No</button></div>
+</div></div>
+
+</body>
+</html>

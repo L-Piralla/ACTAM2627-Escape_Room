@@ -1,0 +1,84 @@
+/* Il pianista e l'armonia – stile */
+
+:root{
+  --paper:#f4ecd8; --card:#fffaf0; --ink:#1b1612; --soft:#5d5246;
+  --wine:#7a1f2b; --gold:#b8892f; --ok:#2f6b3f; --bad:#b3261e;
+}
+*{box-sizing:border-box;margin:0}
+body{background:var(--paper);color:var(--ink);font-family:Georgia,"Palatino Linotype",Palatino,serif;min-height:100vh;transition:background .8s}
+body.joy{--paper:#fbe7a0;--card:#fff8dc;--gold:#e0a000}
+body.mel{--paper:#bfcde0;--card:#eef3f9;--wine:#2b4a7a;--gold:#6f8fb8}
+body.scary{--paper:#5a3a4a;--card:#ecd8dc;--wine:#4a1030;--gold:#8a2a3a}
+#doodles{position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none;opacity:.55}
+main{position:relative;z-index:1;max-width:980px;margin:0 auto;padding:22px 16px 90px}
+
+h1{text-align:center;font-size:clamp(28px,5vw,46px);font-style:italic;font-weight:normal;letter-spacing:.5px}
+.rule{display:flex;align-items:center;gap:12px;margin:10px 0 20px;color:var(--gold)}
+.rule::before,.rule::after{content:"";flex:1;border-top:2px solid var(--ink);border-bottom:1px solid var(--ink);height:5px}
+
+.card{background:var(--card);border:2px solid var(--ink);border-radius:6px;padding:16px;
+  box-shadow:5px 5px 0 var(--ink);margin-bottom:22px;transition:background .8s}
+.card h2{font-size:19px;font-style:italic;font-weight:normal;margin-bottom:12px;padding-bottom:6px;border-bottom:1px solid var(--ink)}
+
+.maestro{display:flex;gap:18px;align-items:center;border-color:var(--wine);box-shadow:5px 5px 0 var(--wine)}
+.avatar{flex:none;width:300px;border-radius:6px;border:3px solid var(--wine);background:#fff;overflow:hidden}
+.avatar img{display:block;width:100%;height:auto}
+.pop{animation:pop .35s}
+@keyframes pop{0%{transform:scale(.96)}60%{transform:scale(1.03)}100%{transform:scale(1)}}
+.maestro b{color:var(--wine);font-size:18px;font-style:italic}
+.maestro p{margin-top:4px;line-height:1.55;font-style:italic;font-size:17px}
+.act{display:flex;gap:10px;margin-top:14px;flex-wrap:wrap}
+
+.track{display:flex;align-items:center;gap:14px;border:1px solid var(--ink);border-radius:4px;padding:10px 12px;margin-bottom:10px;background:#fff}
+.track span{font-style:italic;flex:1}
+.play{width:46px;height:46px;border-radius:50%;border:2px solid var(--ink);background:var(--paper);cursor:pointer;font-size:16px;color:var(--ink)}
+.play:hover{background:var(--gold)}
+.bars{display:flex;align-items:flex-end;gap:3px;height:30px;width:60px}
+.bars i{flex:1;height:5px;background:var(--ink);border-radius:1px}
+.on .bars i{animation:eq .5s ease-in-out infinite alternate}
+.on .bars i:nth-child(2){animation-delay:-.2s}.on .bars i:nth-child(3){animation-delay:-.4s}
+.on .bars i:nth-child(4){animation-delay:-.1s}.on .bars i:nth-child(5){animation-delay:-.3s}
+@keyframes eq{to{height:30px}}
+
+.key{padding:12px 22px;border:2px solid var(--ink);border-radius:4px;background:var(--paper);font:700 18px Georgia,serif;cursor:pointer;box-shadow:0 3px 0 var(--ink);color:var(--ink)}
+.key:active{transform:translateY(3px);box-shadow:none}
+.key.go{background:var(--wine);color:#fff7e8}
+.key.sel{background:var(--gold)}
+.key.bad{opacity:.4;text-decoration:line-through}
+.key:disabled{opacity:.45;cursor:not-allowed}
+.key:hover:not(:disabled){filter:brightness(1.07)}
+:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+.status{text-align:center;min-height:22px;margin-top:10px;font-style:italic;color:var(--soft)}
+.tools{display:flex;justify-content:space-between;align-items:center;margin-top:14px}
+.shake{animation:shake .4s}
+@keyframes shake{20%{transform:translateX(-8px)}40%{transform:translateX(8px)}60%{transform:translateX(-5px)}80%{transform:translateX(5px)}}
+
+.blk{display:flex;align-items:center;gap:10px;border:1px solid var(--ink);background:#fff;border-radius:4px;padding:8px 10px;cursor:grab;font-style:italic}
+.blk.sel{outline:3px solid var(--gold)}
+.blk .bars{width:40px}
+.blk .play{width:38px;height:38px}
+.pool{display:flex;gap:10px;flex-wrap:wrap;min-height:58px;margin:14px 0;align-items:center}
+.zones{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.zone{border:2px dashed var(--ink);border-radius:6px;padding:10px;min-height:130px;display:flex;flex-direction:column;gap:8px;cursor:pointer;background:rgba(255,255,255,.5)}
+.zone small,.hint{color:var(--soft);font-style:italic;font-size:14px}
+.notes{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin:16px 0}
+.nk{min-width:80px;padding:16px 10px}
+.slots{display:flex;gap:10px;justify-content:center;margin:16px 0;flex-wrap:wrap}
+.slot{min-width:80px;height:64px;border:2px solid var(--ink);background:#fff;display:grid;place-items:center;font-size:22px;color:var(--wine)}
+.slot.q{border-style:dashed}
+
+html.snd .play,html.snd #chk{opacity:.45;pointer-events:none}
+.slot{cursor:pointer}
+.back{position:fixed;bottom:14px;left:50%;transform:translateX(-50%);z-index:4}
+#ask{position:fixed;inset:0;z-index:6;background:rgba(27,22,18,.6);display:none;place-items:center;padding:20px}
+#ask.show{display:grid}
+#ask .card{max-width:420px;text-align:center;margin:0}
+#ask p{font-size:19px;font-style:italic;margin-bottom:18px;line-height:1.4}
+#ask .act{justify-content:center}
+
+@media (max-width:760px){
+  .maestro{flex-direction:column;text-align:center}
+  .avatar{width:100%;max-width:340px}
+  .act{justify-content:center}
+}
+@media (prefers-reduced-motion:reduce){.on .bars i{animation:none;height:18px}.pop,.shake{animation:none}}
